@@ -1,6 +1,7 @@
 {
   "version": 1,
   "cli": {
+    "analytics": "6cf5da1a-9080-4257-93d3-1bcca47a0537",
     "defaultCollection": "@nrwl/angular"
   },
   "defaultProject": "web",
@@ -48,7 +49,7 @@
             "tsConfig": "apps/web/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
-            "styles": ["apps/web/src/styles.scss"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/web/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
