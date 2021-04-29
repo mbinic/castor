@@ -1,0 +1,14 @@
+<div style="height: 100%; overflow: auto">
+  <div *ngFor="let pack of packs">
+    <div class="pack">{{ pack.name }}</div>
+    <div
+      *ngFor="let c of pack.components"
+      class="component"
+      draggable="true"
+      (click)="onComponentClick(c)"
+      (dragstart)="onComponentDrag($event, c)"
+    >
+      {{ c.type }}
+    </div>
+  </div>
+</div>

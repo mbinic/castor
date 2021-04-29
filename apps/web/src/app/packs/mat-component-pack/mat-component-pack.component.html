@@ -1,0 +1,21 @@
+<cas-component-pack name="Material Components" [source]="source">
+  <ng-template casComponentTemplate="mat.raised-button" [casInitialProps]="initialButtonProps" let-props>
+    <button mat-raised-button>
+      <ng-container *casRender="props.items"></ng-container>
+    </button>
+  </ng-template>
+
+  <ng-template casComponentTemplate="mat.button" [casInitialProps]="initialButtonProps" let-props>
+    <button mat-button>
+      <ng-container *casRender="props.items"></ng-container>
+    </button>
+  </ng-template>
+
+  <ng-template casComponentTemplate="mat.icon" [casInitialProps]="initialIconProps" let-props>
+    <mat-icon>{{ props.icon }}</mat-icon>
+  </ng-template>
+
+  <ng-template casComponentTemplate="mat.progress-bar" [casInitialProps]="initialProgressBarProps" let-props>
+    <mat-progress-bar [mode]="props.mode" [value]="props.value"></mat-progress-bar>
+  </ng-template>
+</cas-component-pack>

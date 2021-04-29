@@ -1,0 +1,13 @@
+<cas-component-pack name="DOM Components" [source]="source">
+  <ng-template casComponentTemplate="dom.text" let-props>
+    {{ props.text }}
+  </ng-template>
+
+  <ng-template casComponentTemplate="dom.span" let-props>
+    <span>{{ props.text }}</span>
+  </ng-template>
+
+  <ng-template casComponentTemplate="dom.p" let-props>
+    <p>{{ props.text }}</p>
+  </ng-template>
+</cas-component-pack>

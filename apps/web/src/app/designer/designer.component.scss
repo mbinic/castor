@@ -1,0 +1,23 @@
+@mixin dot-background($dot-space, $dot-color, $bg-color) {
+  $dot-size: 1px;
+
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+  background-position: top left;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  @include dot-background(16px, #808080, #fff);
+}

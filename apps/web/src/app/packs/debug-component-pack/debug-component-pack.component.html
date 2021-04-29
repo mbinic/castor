@@ -1,0 +1,27 @@
+<cas-component-pack name="DEBUG Helpers" [source]="source">
+  <ng-template casComponentTemplate="debug.button" [casInitialProps]="initialButtonProps" let-props>
+    <button mat-raised-button>
+      <mat-icon>send</mat-icon>
+      {{ props.text }}
+    </button>
+  </ng-template>
+
+  <ng-template casComponentTemplate="debug.card" [casInitialProps]="initialCardProps" let-props>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <ng-container *casRender="props.title"></ng-container>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container *casRender="props.subtitle"></ng-container>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-container *casRender="props.content"></ng-container>
+      </mat-card-content>
+      <mat-card-actions>
+        <ng-container *casRender="props.actions"></ng-container>
+      </mat-card-actions>
+    </mat-card>
+  </ng-template>
+</cas-component-pack>

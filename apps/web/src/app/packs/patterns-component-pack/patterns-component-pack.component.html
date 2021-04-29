@@ -1,0 +1,12 @@
+<cas-component-pack name="Common Patterns Components" [source]="source">
+  <ng-template casComponentTemplate="cp.labelled-icon" let-props>
+    <mat-icon>{{ props.icon }}</mat-icon>
+    {{ props.text }}
+  </ng-template>
+
+  <ng-template casComponentTemplate="cp.flex-container" let-props>
+    <div [fxLayout]="props.layout" [fxLayoutAlign]="props.align" [fxLayoutGap]="props.gap">
+      <ng-container *casRender="props.items"></ng-container>
+    </div>
+  </ng-template>
+</cas-component-pack>

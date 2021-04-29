@@ -1,0 +1,50 @@
+<ng-container *ngIf="dragging | async; else notDragging">
+  <div
+    *ngIf="containerHighlight | async as c"
+    class="dropTarget"
+    [style.top]="c.top + 'px'"
+    [style.left]="c.left + 'px'"
+    [style.width]="c.width + 'px'"
+    [style.height]="c.height + 'px'"
+  ></div>
+
+  <div
+    *ngFor="let c of dropTargets | async"
+    class="container"
+    [style.top]="c.top + 'px'"
+    [style.left]="c.left + 'px'"
+    [style.width]="c.width + 'px'"
+    [style.height]="c.height + 'px'"
+  ></div>
+</ng-container>
+
+<ng-template #notDragging>
+  <div
+    *ngIf="highlight | async as h"
+    class="highlight"
+    (click)="highlightClick($event)"
+    [style.top]="h.top + 'px'"
+    [style.left]="h.left + 'px'"
+    [style.width]="h.width + 'px'"
+    [style.height]="h.height + 'px'"
+    [style.opacity]="h.element ? 1 : 0"
+  ></div>
+
+  <div
+    *ngFor="let s of selected | async"
+    class="selection"
+    [style.top]="s.top + 'px'"
+    [style.left]="s.left + 'px'"
+    [style.width]="s.width + 'px'"
+    [style.height]="s.height + 'px'"
+  ></div>
+</ng-template>
+
+<!-- <div
+  *ngFor="let c of containers | async"
+  class="container"
+  [style.top]="c.top + 'px'"
+  [style.left]="c.left + 'px'"
+  [style.width]="c.width + 'px'"
+  [style.height]="c.height + 'px'"
+></div> -->
